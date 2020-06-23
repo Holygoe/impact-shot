@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
 {
     public Transform rightShoulder;
     public Transform barrel;
-    public Rigidbody projectilePrefab;
-    public float shootRate = 0.1f;
+    public ProjectileController projectilePrefab;
+    public ProjectileOption projectileOption;
+    private const float shootRate = 0.1f;
 
     private float armLength;
     private Camera mainCamera;
     private float shootDelayCounter;
-    private float projectileForce = 50000;
 
     private void Start()
     {
@@ -47,7 +47,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!TryRaycast(out var hit)) return;
         var projectile = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
-        projectile.AddForce(barrel.forward * projectileForce);
+        
+        projectile.Initialize(barrel.forward, projectileOption);
     }
 
     private bool TryRaycast(out RaycastHit hit)
