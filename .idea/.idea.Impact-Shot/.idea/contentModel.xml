@@ -1,10 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\kondr\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\kondr\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Impact-Shot.257250846.00" t="ExcludeRecursive" />
-    <e p="D:\Projects\Impact-Shot" t="IncludeFlat">
+    <e p="C:\Users\mail\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\mail\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Impact-Shot.-1749528877.00" t="ExcludeRecursive" />
+    <e p="D:\Unity\Impact-Shot" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="PlayerController.cs" t="Include" />
+        </e>
+        <e p="Voxel Arsenal" t="Include">
+          <e p="Demo" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="VoxelBeamScript.cs" t="Include" />
+              <e p="VoxelButtonScript.cs" t="Include" />
+              <e p="VoxelFireProjectile.cs" t="Include" />
+              <e p="VoxelLoopScript.cs" t="Include" />
+              <e p="VoxelOrbit.cs" t="Include" />
+              <e p="VoxelProjectileScript.cs" t="Include" />
+              <e p="VoxelSceneSelect.cs" t="Include" />
+              <e p="VoxelTarget.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="VoxelBeamStatic.cs" t="Include" />
+            <e p="VoxelLightFade.cs" t="Include" />
+            <e p="VoxelRotation.cs" t="Include" />
+            <e p="VoxelSoundSpawn.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="VoxelLitSurface.shader" t="Include" />
+            <e p="VoxelRimLightSolid.shader" t="Include" />
+          </e>
+          <e p="Voxel Arsenal - Readme.txt" t="Include" />
+        </e>
+      </e>
       <e p="Impact-Shot.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
