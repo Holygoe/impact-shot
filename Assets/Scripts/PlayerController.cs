@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
         {
             shootDelayCounter -= Time.deltaTime;
         }
-        else if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             shootDelayCounter = shootRate;
             Shoot();

@@ -11,7 +11,7 @@ public class ZombieController : MonoBehaviour
     {
         if (animator.enabled)
         {
-            StartCoroutine(GameManager.SlowDown());
+            GameManager.SlowDown();
         }
         animator.enabled = false;
     }

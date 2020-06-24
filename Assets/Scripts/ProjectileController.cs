@@ -22,16 +22,18 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var thisRigidbody = GetComponent<Rigidbody>();
         var otherRigidbody = other.GetComponent<Rigidbody>();
-        if (thisRigidbody && otherRigidbody)
+        var thisRigidbody = GetComponent<Rigidbody>();
+        if (otherRigidbody && thisRigidbody)
         {
-            var zombieCollider = other.GetComponent<ZombieCollider>();
+            var zombieCollider = otherRigidbody.GetComponent<ZombieCollider>();
             if (zombieCollider)
             {
                 zombieCollider.Hit();
             }
             otherRigidbody.AddForce(thisRigidbody.velocity.normalized * option.force);
+            //GameManager.SlowDown();
+
         }
         Destroy(gameObject);
     }
