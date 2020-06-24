@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
     public Rigidbody rb;
     public ProjectileOption option;
-    private const float velocity = 10;
+    
+    private const float Velocity = 10;
         
     private void Start()
     {
         Destroy(gameObject, 5);
     }
 
-    public void Initialize(Vector3 direction, ProjectileOption option)
+    public void Initialize(Vector3 direction, ProjectileOption projectileOption)
     {
-        rb.velocity = direction * velocity;
-        this.option = option;
+        rb.velocity = direction * Velocity;
+        option = projectileOption;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,8 +30,6 @@ public class ProjectileController : MonoBehaviour
                 zombieCollider.Hit();
             }
             otherRigidbody.AddForce(thisRigidbody.velocity.normalized * option.force);
-            //GameManager.SlowDown();
-
         }
         Destroy(gameObject);
     }

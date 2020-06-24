@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,33 +6,28 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    private static GameManager _instance;
     
     public ProjectileOption[] projectileOptions;
     public PlayerController playerController;
     public CinemachineMixingCamera mixingCamera;
     public Dropdown projectileOptionsDropdown;
 
-    private const float fixedTimestep = 0.02f;
-    private const float slowdownRate = 0.1f;
-    private const float camChangingRate = 1;
-    private const string projectileOptionPref = "ProjectileOptionPref";
+    private const float FixedTimestep = 0.02f;
+    private const float SlowdownRate = 0.1f;
+    private const float CamChangingRate = 2;
+    private const string ProjectileOptionIndexPref = "ProjectileOptionIndex";
 
-    private bool isSlowingDown;
-    private int vrCameraIndex = 0;
-
-    private void Awake()
-    {
-        instance = this;
-    }
+    private bool _isSlowingDown;
+    private int _cameraIndex;
 
     private void Start()
     {
-        Time.timeScale = 1f;
-        Time.fixedDeltaTime = fixedTimestep;
-        var projectileOption = PlayerPrefs.GetInt(projectileOptionPref, 0);
-        playerController.projectileOption = projectileOptions[projectileOption];
-        projectileOptionsDropdown.SetValueWithoutNotify(projectileOption);
+        _instance = this;
+        ScaleTime(1);
+        var projectileOptionIndex = PlayerPrefs.GetInt(ProjectileOptionIndexPref, 0);
+        playerController.projectileOption = projectileOptions[projectileOptionIndex];
+        projectileOptionsDropdown.SetValueWithoutNotify(projectileOptionIndex);
     }
 
     public void Restart()
@@ -42,43 +35,46 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-    public void SelectProjectile(int option)
+    public void SelectProjectileOption(int index)
     {
-        playerController.projectileOption = projectileOptions[option];
-        PlayerPrefs.SetInt(projectileOptionPref, option);
+        playerController.projectileOption = projectileOptions[index];
+        PlayerPrefs.SetInt(ProjectileOptionIndexPref, index);
     }
 
     public static void SlowDown()
     {
-        if (instance.isSlowingDown)
+        if (_instance._isSlowingDown)
         {
             return;
         }
 
-        instance.StartCoroutine(instance.SlowDownAsync());
+        _instance.StartCoroutine(_instance.SlowDownAsync());
     }
     
     private IEnumerator SlowDownAsync()
     {
-       
-        isSlowingDown = true;
+        _isSlowingDown = true;
         yield return new WaitForSecondsRealtime(0.05f);
-        vrCameraIndex = 1;
-        Time.timeScale = slowdownRate;
-        Time.fixedDeltaTime = fixedTimestep * slowdownRate;
+        _cameraIndex = 1;
+        ScaleTime(SlowdownRate);
         yield return new WaitForSecondsRealtime(5);
-        Time.timeScale = 1f;
-        Time.fixedDeltaTime = fixedTimestep;
-        isSlowingDown = false;
-        vrCameraIndex = 0;
+        ScaleTime(1f);
+        _isSlowingDown = false;
+        _cameraIndex = 0;
     }
 
     private void Update()
     {
-        float targetWeight0 = vrCameraIndex == 0 ? 1 : 0;
-        float targetWeight1 = vrCameraIndex == 1 ? 1 : 0;
-        
-        mixingCamera.m_Weight0 = Mathf.MoveTowards(mixingCamera.m_Weight0, targetWeight0, Time.unscaledDeltaTime * camChangingRate);
-        mixingCamera.m_Weight1 = Mathf.MoveTowards(mixingCamera.m_Weight1, targetWeight1, Time.unscaledDeltaTime * camChangingRate);
+        var isCameraIndexFirst = _cameraIndex == 0;
+        float targetWeight0 = isCameraIndexFirst ? 1 : 0;
+        float targetWeight1 = isCameraIndexFirst ? 0 : 1;
+        mixingCamera.m_Weight0 = Mathf.MoveTowards(mixingCamera.m_Weight0, targetWeight0, Time.unscaledDeltaTime * CamChangingRate);
+        mixingCamera.m_Weight1 = Mathf.MoveTowards(mixingCamera.m_Weight1, targetWeight1, Time.unscaledDeltaTime * CamChangingRate);
+    }
+
+    private static void ScaleTime(float scale)
+    {
+        Time.timeScale = scale;
+        Time.fixedDeltaTime = FixedTimestep * scale;
     }
 }

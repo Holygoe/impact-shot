@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,16 +7,17 @@ public class PlayerController : MonoBehaviour
     public Transform barrel;
     public ProjectileController projectilePrefab;
     public ProjectileOption projectileOption;
-    private const float shootRate = 0.1f;
+    
+    private const float ShootRate = 0.1f;
 
-    private float armLength;
-    private Camera mainCamera;
-    private float shootDelayCounter;
+    private float _armLength;
+    private Camera _mainCamera;
+    private float _shootDelayCounter;
 
     private void Start()
     {
-        armLength = (barrel.position - rightShoulder.position).magnitude;
-        mainCamera = Camera.main;
+        _armLength = (barrel.position - rightShoulder.position).magnitude;
+        _mainCamera = Camera.main;
     }
 
     private void Update()
@@ -29,17 +26,17 @@ public class PlayerController : MonoBehaviour
         {
             var rightShoulderPosition = rightShoulder.position;
             var aimDirection = hit.point - rightShoulderPosition;
-            barrel.position = aimDirection.normalized * armLength + rightShoulderPosition;
+            barrel.position = aimDirection.normalized * _armLength + rightShoulderPosition;
             barrel.LookAt(hit.point);
         }
 
-        if (shootDelayCounter > 0)
+        if (_shootDelayCounter > 0)
         {
-            shootDelayCounter -= Time.deltaTime;
+            _shootDelayCounter -= Time.deltaTime;
         }
         else if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            shootDelayCounter = shootRate;
+            _shootDelayCounter = ShootRate;
             Shoot();
         }
     }
@@ -54,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     private bool TryRaycast(out RaycastHit hit)
     {
-        var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         return Physics.Raycast(ray.origin, ray.direction, out hit);
     }
 }

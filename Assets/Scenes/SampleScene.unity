@@ -495,9 +495,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.07
-  m_Height: 0.27
+  m_Height: 0.31625396
   m_Direction: 0
-  m_Center: {x: -0.12, y: 0, z: 0}
+  m_Center: {x: -0.09994732, y: 0.000000002752762, z: -8.1941065e-10}
 --- !u!114 &278956891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,8 +995,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.53, y: 0.23, z: 0.27}
-  m_Center: {x: -0.28, y: -0.049796686, z: -0.00000016391277}
+  m_Size: {x: 0.5299999, y: 0.21796945, z: 0.27}
+  m_Center: {x: -0.28, y: -0.055811968, z: -0.00000016238313}
 --- !u!4 &425422326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5436720006541381587, guid: 6dc4cf4496348884d8ee27743ae38562,
@@ -1161,8 +1161,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.10301792
-  m_Center: {x: -0.06999999, y: 0.033017907, z: 0.00000000216242}
+  m_Radius: 0.15263936
+  m_Center: {x: -0.05810342, y: 0.038155783, z: 0.00584133}
 --- !u!114 &498595720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,7 +2159,7 @@ GameObject:
   - component: {fileID: 1142461746}
   - component: {fileID: 1142461745}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: SelectProjectileOptionDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2245,7 +2245,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1604662744}
-        m_MethodName: SelectProjectile
+        m_MethodName: SelectProjectileOption
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3086,9 +3086,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.07
-  m_Height: 0.35
+  m_Height: 0.40341014
   m_Direction: 0
-  m_Center: {x: -0.18, y: 0, z: 0}
+  m_Center: {x: -0.20670488, y: 0.0000002478375, z: -0.00000014628894}
 --- !u!114 &1496430755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3525,9 +3525,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.07
-  m_Height: 0.25
+  m_Height: 0.34097978
   m_Direction: 0
-  m_Center: {x: -0.15, y: 0, z: 0}
+  m_Center: {x: -0.1954927, y: 0.0000004605038, z: 0.0000005463593}
 --- !u!114 &1647945658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5604,9 +5604,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.07
-  m_Height: 0.31
+  m_Height: 0.34322628
   m_Direction: 0
-  m_Center: {x: -0.13287076, y: 0, z: 0}
+  m_Center: {x: -0.11421737, y: 0.000000001261351, z: 0.0000000074060162}
 --- !u!1001 &1884698875
 PrefabInstance:
   m_ObjectHideFlags: 0

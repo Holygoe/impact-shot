@@ -11,24 +11,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProjectileOption.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ZombieCollider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProjectileController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ZombieCollider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ZombieController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProjectileController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProjectileOption.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/ShotController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ZombieCollider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileOption.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ZombieController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileOption.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ZombieCollider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ZombieController.cs" />
       </list>
     </option>
   </component>
@@ -77,6 +77,8 @@
       <workItem from="1592940928123" duration="871000" />
       <workItem from="1592942563200" duration="6285000" />
       <workItem from="1592988540764" duration="6143000" />
+      <workItem from="1592998188064" duration="382000" />
+      <workItem from="1593000796017" duration="1101000" />
     </task>
     <servers />
   </component>
